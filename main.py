@@ -9,7 +9,7 @@ def main():
         query = voice_input.take_command()
         if query.lower() == out.commands(0):
             out.say_calculate_hour()
-            out.listening()
+            out.say_listening()
             try_help()
 
 def try_help():
@@ -37,12 +37,12 @@ def menu():
     if lang == 1:
         print("You have selected English")
         welcome_user.speak("eng")
-        voice_output.set_english()
+        out.set_english()
         voice_input.set_english()
     elif lang == 2:
         print("You have selected Spanish")
         welcome_user.speak("esp")
-        voice_output.set_spanish()
+        out.set_spanish()
         voice_input.set_spanish()
     else:
         print("Invalid input")
