@@ -16,7 +16,8 @@ englishwords = [
 "You can repeat it?",
 "attendee",
 "of",
-"and"
+"and",
+"Try again later"
 ]
 
 spanishwords = [
@@ -37,7 +38,8 @@ spanishwords = [
 "Puedes repetirlo?",
 "asistente",
 "de",
-"y"
+"y",
+"Intentalo más tarde"
 ]
 
 

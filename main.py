@@ -6,12 +6,14 @@ out = voice_output.Out_engine()
 
 def main():
     while True:
+        # get voice input and make a string
         query = voice_input.take_command()
-        if query.lower() == out.commands(0):
+        if query.lower() == out.commands(0): # if query is equal to assistant
             out.say_calculate_hour()
             out.say_listening()
             try_help()
 
+#you have three tries to say a valid command 
 def try_help():
     attempt = 3
     while attempt > 0:
@@ -28,7 +30,12 @@ def try_help():
         #elif query.lower() in out.commands(4):
         #    out.say_current_weather()
         else:
-            attempt = attempt - 1
+            attempt -= 1
+            if attempt > 0:
+                out.say_i_do_not_understand()
+            else:
+                out.say_try_again_later()
+
 def menu():
     print("Select language")
     print("1. English")
@@ -46,7 +53,7 @@ def menu():
         voice_input.set_spanish()
     else:
         print("Invalid input")
-        main()
+        menu()
     
 if __name__ == '__main__':
     menu()
