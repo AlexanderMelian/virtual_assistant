@@ -12,7 +12,7 @@ Can say the current hour and date after you say their respective command.
 ## IDEAS
 
 
-Say "TODO LIST" whit a number.
+Say "TODO LIST" with a number.
 
 ```
 WHILE (NUMER--) > 0:
