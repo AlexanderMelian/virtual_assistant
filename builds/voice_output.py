@@ -1,6 +1,6 @@
 import pyttsx3
-import language
-import functions_help
+from src import language
+from src import functions_help
 
 #class pyttsx3
 class Out_engine:
@@ -71,6 +71,10 @@ class Out_engine:
         self.engine.say(text)
         self.run()
 
+    def say_im_remember(self, query):
+        self.say(self.number_command(19))
+        functions_help.remember_spanish(query)
+
     def run(self):
         self.engine.runAndWait()
 
@@ -84,18 +88,19 @@ class Out_engine:
             self.say_good_evening()
 
     def commands(self, number) -> str:
-        if self.lang == "en":
+        if self.is_english():
             return str(language.english_commands[number])
         else:
             return str(language.spanish_commands[number])
 
-
     def call_attendee(self):
         self.engine.say_listening()
 
-
     def number_command(self, number):
-        if self.lang == "en":
+        if self.is_english():
             return str(language.englishwords[number])
         else:
             return str(language.spanishwords[number])
+
+    def is_english(self):
+        return self.lang == "en"

@@ -1,5 +1,4 @@
 import speech_recognition as sr
-import voice_output
 
 r = sr.Recognizer()
 r.pause_threshold = 0.5

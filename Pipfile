@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pyttsx3 = "*"
 speechrecognition = "*"
+python-telegram-bot = "*"
 
 [dev-packages]
 

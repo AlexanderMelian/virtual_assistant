@@ -1,6 +1,7 @@
-import welcome_user
-import voice_output
-import voice_input
+from src import welcome_user
+from builds import voice_output
+from builds import voice_input
+
 
 out = voice_output.Out_engine()
 
@@ -18,10 +19,10 @@ def try_help():
     attempt = 3
     while attempt > 0:
         query = voice_input.take_command()
-        if query.lower() in out.commands(1):
+        if out.commands(1) in query.lower():
             out.say_current_date()
 
-        elif query.lower() in out.commands(2):
+        elif out.commands(2) in query.lower():
             out.say_current_time()
 
         #elif query.lower() in out.commands(3):
